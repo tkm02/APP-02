@@ -1,0 +1,99 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    /* border: 2px solid; */
+    padding: 8px;
+    background-color: #fff;
+    /* -webkit-box-shadow: 0px 5px 38px 2px rgba(0,0,0,0.55); 
+box-shadow: 0px 5px 38px 2px rgba(0,0,0,0.55); */
+    
+}
+nav{
+    /* border: 2px solid; */
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    /* border: 2px solid; */
+    width: 25%;
+}
+.logo img{
+    width: 150px;
+}
+.barre-Recherche{
+    /* border: 2px solid; */
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.barre-Recherche input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: 0;
+    /* font-size: 1.1em; */
+    font-style: italic;
+}
+.barre-Recherche i{
+    font-size: 1.2em;
+    position: relative;
+    right: 30px;
+    color: #141B5D;
+}
+.options{
+    border: 1px solid;
+    width: 25%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 40px;
+
+}
+.items{
+    background-color: #141B5D;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    width: 85%;
+}
+
+.items a{
+    text-decoration: none;
+    color: #fff;
+    /* border: 2px solid; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-Ordinateur{
+    /* border: 1px solid; */
+    height: 100%;
+    width: 15%;
+    border-radius: 0 10px 10px 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.logo-Ordinateur svg{
+    width: 50px;
+    height: 30px;
+}

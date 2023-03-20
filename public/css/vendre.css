@@ -1,0 +1,249 @@
+body{
+    background: rgb(20,27,80);
+    /* background: linear-gradient(180deg, rgba(20,27,80,1) 0%, rgba(20,27,80,1) 35%, rgba(0,25,255,1) 100%); */
+}
+.offres{
+    /* border: 2px solid #fff; */
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.offre{
+    /* border: 2px solid; */
+    width: 30%;
+    height: 90%;
+    margin: 10px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* justify-content: center; */
+    box-shadow: #25C073 -5px 4px 20px;
+}
+.offre-2{
+    box-shadow: #0019FF -5px 4px 20px;
+
+}
+.offre-3{
+    box-shadow: #C32020 -5px 4px 20px;
+
+}
+.type-offre{
+    width: 100%;
+    /* border: 2px solid; */
+    height: 55px;
+    background-color: #25C073;
+    font-size: .6em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    /* position: relative; */
+}
+.type-offre-1{
+    background-color: #25C073;
+}
+.type-offre-2{
+    background-color: #0019FF;
+}
+.type-offre-3{
+    background-color: #C32020;
+}
+.nom-type{
+    /* border: 2px solid; */
+    width: 80%;
+    text-shadow: none;
+}
+.etoile{
+    /* border: 2px solid; */
+    width: 10%;
+    position: relative;
+    left: 380px;
+    text-shadow: none;
+    display: flex;
+}
+.etoile-3{
+    left: 350px;
+}
+
+.milieu{
+    /* border: 2px solid; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#25C073;
+    position: relative;
+}
+#prix{
+    /* border: 2px solid; */
+    /* width: 100%; */
+    position: relative;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#prix-souscription{
+    /* border: 2px solid; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.8em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p-2{
+    color: #0019FF;
+}
+.p-3{
+    color: #C32020;
+}
+.devise{
+    color: #141B5D;
+    font-size: 0.5em;
+}
+hr{
+    width: 90%;
+    border: 1.5px  dotted;   
+}
+.description-offre{
+    /* border: 2px solid; */
+    width: 85%;
+    margin: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000;
+}
+.btn-souscription{
+    border: 2px solid #25C073;
+    color: #25C073;
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* font-size: 1.em; */
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+.btn-1{
+    transition: background 0.5s ease-in-out;
+}
+.btn-2{
+    border: 2px solid #0019FF;
+    color: #0019FF;
+    transition: background 0.5s ease-in-out;
+}
+.btn-3{
+    border: 2px solid #C32020;
+    color: #C32020;
+    transition: background 0.5s ease-in-out;
+}
+.btn-1:hover{
+    background-color: #25C073;
+    border: none;
+    color: #fff;
+}
+.btn-2:hover{
+    background-color: #0019FF;
+    border: none;
+    color: #fff;
+}
+.btn-3:hover{
+    background-color: #C32020;
+    border: none;
+    color: #fff;
+}
+
+.inscription-vendeur{
+    /* border: 2px solid; */
+    background-color: #fff;
+    margin: 20px;
+}
+.container{
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #141B5D;
+    color: #fff;
+    
+}
+.titre-inscription{
+    text-align: center;
+    font-size: 2.2em;
+    color: #141B5D;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+
+}
+.offre-demande{
+    border: 2px solid;
+    width: 35%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+.demarrer{
+    border: 2px solid;
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-demarer-inscription{
+    border: 0;
+    padding: 15px;
+    width: 230px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    background-color: #25C073;
+    color: #fff;
+}
+.modele-info{
+    margin-top: 25px;
+    /* border: 2px solid; */
+}
+.information{
+    /* border: 2px solid; */
+    margin: 8px;
+    list-style: none;
+    font-size: 1.1em;
+    display: flex;
+    justify-self: center;
+    /* align-items: center  ; */
+}
+.information i{
+    /* border: 2px solid; */
+    display: flex;
+    margin-right: 5px;
+    
+
+}
+.information .fa-circle-check{
+    color: #25C073;
+    font-size: 1.3em;
+}
+.information .fa-circle-xmark{
+    color: #C32020;
+    font-size: 1.3em;
+}
+.texte-info{
+    /* border: 2px solid; */
+    width: 100%;
+}

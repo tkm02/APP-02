@@ -1,0 +1,81 @@
+#inscription{
+    /* border: 2px solid; */
+    background-image: url('/image/bgconnexionjpg.jpg');
+    height: 87.7Vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+body{
+    overflow: hidden;
+}
+.image-homme{
+    /* border: 2px solid; */
+    width: 50%;
+    height: 100%;
+}
+.image-homme img{
+    width: 650px;
+}
+.inputs{
+    /* border: 2px solid; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.inputs h1{
+    color: #fff;
+    margin: 20px 0 0 0;
+    font-size: 3em;
+}
+.mail-inscription{
+    /* margin:80px 0 0 0 ; */
+}
+.mail-inscription,.password,.nom,.prenom,.numero{
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5px ;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+.password{margin: 15px;}
+#email,#password,#nom,#prenom,#numero{
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.btn{
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;  
+    width: 60%;
+    margin: 10px;
+    background-color: #141B5D;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background ease-in-out 0.8s;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #141B5D;
+}
+.check{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.ch1{
+    margin: 5px 0;
+}
