@@ -8,7 +8,7 @@
     flex-direction: row;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .image-homme{
     /* border: 2px solid; */
