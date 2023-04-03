@@ -20,6 +20,9 @@ app.get('/inscription',(req,res)=>{
 app.get('/vendre',(req,res)=>{
     res.render('vendre');
 })
+app.get('/InscriptionVendeur',(req,res)=>{
+    res.render('InscriptionVendeur');
+})
 
 
 

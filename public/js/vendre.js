@@ -3,6 +3,7 @@ let containerIncription = document.getElementById('container-inscription');
 let offreDemande = document.getElementById('offre-demande');
 let type= document.getElementById('type-offre');
 let nomType = document.createElement('span');
+let btnDemarreInscription = document.getElementsByClassName("btn-demarer-inscription");
 nomType.textContent='Basic';
 nomType.classList.add('nom-type');
 type.classList.add('type-offre');
@@ -66,21 +67,11 @@ let texteInfo = document.querySelectorAll('.texte-info');
 let icon = document.querySelectorAll('.fa-sharp ');
 
 
-// let liInfo = document.createElement('li');
-// modeleInfo.appendChild(liInfo);
 
-// console.log(tabBasic);
-// console.log(tabPrenium);
-// console.log(tabVip);
 
-    btnSouscription.forEach(el => el.addEventListener('click',(e)=>{
+btnSouscription.forEach(el => el.addEventListener('click',(e)=>{
         const typeOffre = el.getAttribute('data-offre');
-        
-        // const liInfo = document.createElement('li');
-        // liInfo.classList.add('information');  
-        // const icon = document.createElement('i') ;
-        // icon.classList.add('fa-sharp');
-        // icon.classList.add('fa-solid');
+
         switch (typeOffre) {
             case "basic":
                 tabBasic.forEach((el)=> {
@@ -97,25 +88,16 @@ let icon = document.querySelectorAll('.fa-sharp ');
                         let tabInter = el[1];
                         texteInfo.forEach((texte,index)=>{
                             let nvIndex = index+3;
-                            // console.log(nvIndex);
-                            // for (let i = 0; i < 4; i++) {
-                            //   }
                             if (index <= 2) {
                                 icon[nvIndex].classList.add('fa-circle-xmark');
                             }
                                 texte.textContent = tabInter[index];
-
-                            
-                              
-
                         })
                     }
-                    // el.forEach(element=>{console.log(element);})
                 })
                 type.classList.add('type-offre-1'); 
                 nomType.textContent = typeOffre;
                 break;
-
             case "prenium":             
                 type.classList.add('type-offre-2');   
                 nomType.textContent = typeOffre;
@@ -124,7 +106,8 @@ let icon = document.querySelectorAll('.fa-sharp ');
                 type.classList.add('type-offre-3');   
                 nomType.textContent = typeOffre;
             default:
-                // nomType.textContent="0";
                 break;
         }
 }));
+
+
