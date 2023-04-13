@@ -23,7 +23,13 @@ app.get('/vendre',(req,res)=>{
 app.get('/InscriptionVendeur',(req,res)=>{
     res.render('InscriptionVendeur');
 })
-
+app.get('/InscriptionVendeur2',(req,res)=>{
+    res.render('InscriptionVendeur2');
+})
+app.get('/InscriptionVendeur3',(req,res)=>{
+    res.render('InscriptionVendeur3'); 
+})
+    
 
 
 
