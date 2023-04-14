@@ -40,10 +40,10 @@
     <section class="vendeur">
        
         <div id="animation">
-            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
         </div>
 
-        <form action="">
+        <form id="form2">
 
             <label for="nomEntreprise">Nom de votre entreprise </label>
             <input type="text" id="nomEntreprise" name="nomEntreprise" placeholder="Entrer le nom de votre entreprise " required>
@@ -52,11 +52,13 @@
             <input type="text" id="villeEntreprise" name="villeEntreprise" placeholder="Entrer votre ville" required>
 
             <label for="numeroEntreprise">Numéro de téléphone</label>
-            <input type="email" id="mailVendeur" name="mailVendeur" placeholder="Entrer votre email" required>
-            <a href="/InscriptionVendeur3" type="submit">Suivant</a>
+            <input type="tel" id="numeroEntreprise" name="numeroEntreprise" placeholder="Entrer votre numéro" required >
+
+            <button id="btn2">Suivant</button>
         </form>
     </section>
 
+  <script src="/js/vendre2.js"></script>
   <script src="/js/particule.js" type="text/javascript"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     

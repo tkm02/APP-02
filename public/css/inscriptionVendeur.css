@@ -50,10 +50,11 @@ form input{
     border-radius: 5px;
     border: 1px solid #B391FF;
     background-color: #E8E7E1;
+    outline: none;
 
 }
 
-form a{
+form #btn1,#btn2{
     width: 90%;
     padding: 15px;
     border-radius: 5px;
@@ -72,7 +73,7 @@ form a{
 form label{
     margin: 8px 0 0 0;
 }
-form  a:hover{
+form  #btn1:hover, #btn2:hover{
     background-color: transparent;
     border: 1px solid #B391FF;
     color: #333;
@@ -100,7 +101,7 @@ form  a:hover{
   .code-input {
     width: 4rem;
     height: 4rem;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
     text-align: center;
     font-size: 1.5rem;
     border: 2px solid #ccc;
