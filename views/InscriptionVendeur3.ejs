@@ -45,7 +45,7 @@
             <lottie-player id="fin" src="https://assets1.lottiefiles.com/packages/lf20_zwkm4xbs.json"  background="transparent"  speed="1"   loop       autoplay></lottie-player>
         </div>
 
-        <form id="form">
+        <form id="form" action="/InscriptionVendeur3/confirme" method="POST">
 
             <div class="confirmMail">
                 <div>
@@ -58,10 +58,10 @@
                     <input type="text" id="code3" name="code3" class="code-input" maxlength="1" required>
                     <input type="text" id="code4" name="code4" class="code-input" maxlength="1" required>
                 </div>
-                
+                <p id="info"></p>
             </div>
 
-            <div class="confirmNum">
+            <!-- <div class="confirmNum">
                 <div>
                     <label >Confirmation du numéro </label> 
                 </div>
@@ -73,7 +73,7 @@
                     <input type="text" id="code4" name="code4" class="code-input" maxlength="1" required>
                 </div>
                 
-            </div>
+            </div> -->
 
             <button id="btnTermine" type="submit">Terminer</button>
            

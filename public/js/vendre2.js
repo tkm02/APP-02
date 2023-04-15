@@ -1,17 +1,16 @@
 // inscription2.js
-
 const form2 = document.getElementById('form2');
 
 form2.addEventListener('submit', (e) => {
+    
   e.preventDefault();
-  const nomEntreprise = document.getElementById('nomEntreprise').value;
-  const villeEntreprise = document.getElementById('villeEntreprise').value;
-  const numeroEntreprise = document.getElementById('numeroEntreprise').value;
-
-  const objVendeur = JSON.parse(localStorage.getItem('objVendeur'));
-  objVendeur.nomEntreprise = nomEntreprise;
-  objVendeur.villeEntreprise = villeEntreprise;
-  objVendeur.numeroEntreprise = numeroEntreprise;
+  const nomEntreprise           = document.getElementById('nomEntreprise').value;
+  const villeEntreprise         = document.getElementById('villeEntreprise').value;
+  const numeroEntreprise        = document.getElementById('numeroEntreprise').value;
+  const objVendeur              = JSON.parse(localStorage.getItem('objVendeur'));
+  objVendeur.nomEntreprise      = nomEntreprise;
+  objVendeur.villeEntreprise    = villeEntreprise;
+  objVendeur.numeroEntreprise   = numeroEntreprise;
 
   localStorage.setItem('objVendeur', JSON.stringify(objVendeur));
 

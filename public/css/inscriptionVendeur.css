@@ -113,12 +113,18 @@ form  #btn1:hover, #btn2:hover{
   .code-input:focus {
     border-color: #C32020;
   }
-
+#info{
+    /* border: 2px solid; */
+    width: 50%;
+    color: #C32020;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 #btnTermine{
     width: 50%;
     padding: 15px;
     border-radius: 5px;
-    background-color: #C32020;
+    background-color: #B391FF;
     color: #fff;
     border: 0;
     margin: 10px auto;
@@ -127,7 +133,7 @@ form  #btn1:hover, #btn2:hover{
 }
 #btnTermine:hover{
     background-color: transparent;
-    color: #C32020;
+    color: #B391FF;
     border: 1px solid #C32020;
 }
   
