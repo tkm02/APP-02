@@ -1,16 +1,23 @@
 const express           = require('express');
 const app               = express();
+const Vendeur           = require('./models/vendeur')
 const DOMAIN            = 'sandboxc2467ce6ab9142f9b6268aa9eb44e68f.mailgun.org';
 const formData          = require('form-data');
 const Mailgun           = require('mailgun.js');
 const mailgun           = new Mailgun(formData);
 const mg                = mailgun.client({username: 'api', key: 'dea8743e705ae7d77d329e7399cbb9cf-2cc48b29-b90a0233'});
 var code1               = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+const mongoose          = require('mongoose');
+const bcrypt          = require('bcrypt');
 
-app.set("view engine", "ejs");
+mongoose.connect(`mongodb://tuo:hVcEyGxXnNw1bb6S@127.0.0.1/APP_02`,{useNewUrlParser: true, useUnifiedTopology: true })
+        .then(() => console.log('connexion a mongodb réussie!'))
+        .catch(err => console.log(err,'impossible de se connecter vérifie et réessaie'));
+
+app.set("view engine", "ejs"); 
 app.use(express.json());
-
-
+ 
+ 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/',(req,res)=>{
@@ -66,14 +73,23 @@ app.post('/InscriptionVendeur3',(req,res)=>{
 app.post('/InscriptionVendeur3/confirme',(req,res)=>{
 
     const codeGenerer       = code1;
-    const codeSaisie        =req.body.code1;
-
+    const codeSaisie        = req.body.code1;
+    console.log('====================================');
+    console.log(req.body);
+    console.log('====================================');
+    const {nomVendeur,prenomVendeur,mailVendeur,nomEntreprise,villeEntreprise,numeroEntreprise,motDePassVendeur} = req.body.vendeur;
     if ( parseInt(codeSaisie)  === codeGenerer) {
-
-        res.sendStatus(200,{response:'ok'})
+        res.status(200).send({response:'ok'});
+        // res.redirect('/InscriptionVendeur3/save');
+        
         //enregistrer le client dans la base de donnée maintenant
     } else { res.sendStatus(400,{response:'error'}) }
 })
 
+app.post('/InscriptionVendeur3/save',(req,res)=>{
+    console.log('====================================');
+    console.log(req.body);
+    console.log('====================================');
+})
 
 module.exports = app;                                                   

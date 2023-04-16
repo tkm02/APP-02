@@ -28,11 +28,11 @@ codeInputs[codeInputs.length - 1].addEventListener('input', () => {
   if (codeInputs[codeInputs.length - 1].value.length === 1) {
 
     const codeMail   = codeInputs[0].value + codeInputs[1].value + codeInputs[2].value + codeInputs[3].value;
-    const objVendeur = JSON.parse(localStorage.getItem('objVendeur'));
+    const objVendeur = JSON.parse(sessionStorage.getItem('objVendeur'));
 
     fetch('/InscriptionVendeur3/confirme', {
 
-      method: 'POST',
+      method: 'POST', 
       headers: {
 
         'Content-Type': 'application/json'
@@ -43,7 +43,9 @@ codeInputs[codeInputs.length - 1].addEventListener('input', () => {
 
     })
     .then(response => {
-
+      console.log('====================================');
+      console.log(response);
+      console.log('====================================');
       if (response.ok) {
 
         console.log(' le Code est correct');
@@ -54,7 +56,7 @@ codeInputs[codeInputs.length - 1].addEventListener('input', () => {
 
         setTimeout(() => {
 
-            window.location.href='/....';
+            window.location.href='/InscriptionVendeur3/save';
 
         }, 3000);
         

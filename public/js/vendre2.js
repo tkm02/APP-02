@@ -7,12 +7,15 @@ form2.addEventListener('submit', (e) => {
   const nomEntreprise           = document.getElementById('nomEntreprise').value;
   const villeEntreprise         = document.getElementById('villeEntreprise').value;
   const numeroEntreprise        = document.getElementById('numeroEntreprise').value;
-  const objVendeur              = JSON.parse(localStorage.getItem('objVendeur'));
+  const motDePassVendeur        = document.getElementById('motDePassVendeur').value;
+  const objVendeur              = JSON.parse(sessionStorage.getItem('objVendeur'));
+
   objVendeur.nomEntreprise      = nomEntreprise;
   objVendeur.villeEntreprise    = villeEntreprise;
   objVendeur.numeroEntreprise   = numeroEntreprise;
+  objVendeur.motDePassVendeur   = motDePassVendeur;
 
-  localStorage.setItem('objVendeur', JSON.stringify(objVendeur));
+  sessionStorage.setItem('objVendeur', JSON.stringify(objVendeur));
 
   fetch('/InscriptionVendeur3', {
     method: 'POST',

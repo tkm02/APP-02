@@ -15,7 +15,7 @@ form1.addEventListener('submit', (e) => {
     mailVendeur
     
   }
-  localStorage.setItem('objVendeur', JSON.stringify(objVendeur));
+  sessionStorage.setItem('objVendeur', JSON.stringify(objVendeur));
 
   window.location.href = '/InscriptionVendeur2';
 });
