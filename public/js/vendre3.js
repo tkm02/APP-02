@@ -56,7 +56,7 @@ codeInputs[codeInputs.length - 1].addEventListener('input', () => {
 
         setTimeout(() => {
 
-            window.location.href='/InscriptionVendeur3/save';
+            window.location.href='/tableauDeBord';
 
         }, 3000);
         
