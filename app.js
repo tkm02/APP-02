@@ -8,10 +8,13 @@ const database = process.env.DATA_BASE ;
 
 
 mongoose.connect(`${database}`,{useNewUrlParser: true, useUnifiedTopology: true })
-        .then(() => console.log('connexion a mongodb réussie!'))
-        .catch(err => console.log(err,'impossible de se connecter vérifie et réessaie'));
+        .then(() => {   
+                        console.log('====================================')
+                        console.log('connexion a mongodb réussie!')
+                        console.log('====================================')
+        }).catch(err => console.log(err,'impossible de se connecter vérifie et réessaie'));
 
-app.set("view engine", "ejs"); 
+app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 

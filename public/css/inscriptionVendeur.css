@@ -54,7 +54,7 @@ form input{
 
 }
 
-form #btn1,#btn2{
+form #btn1,#btn2,#btn3{
     width: 90%;
     padding: 15px;
     border-radius: 5px;
@@ -73,7 +73,7 @@ form #btn1,#btn2{
 form label{
     margin: 8px 0 0 0;
 }
-form  #btn1:hover, #btn2:hover{
+form  #btn1:hover, #btn2:hover, #btn3:hover{
     background-color: transparent;
     border: 1px solid #B391FF;
     color: #333;

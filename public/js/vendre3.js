@@ -43,12 +43,9 @@ codeInputs[codeInputs.length - 1].addEventListener('input', () => {
 
     })
     .then(response => {
-      console.log('====================================');
-      console.log(response);
-      console.log('====================================');
+      
       if (response.ok) {
 
-        console.log(' le Code est correct');
         page.style.display='none';
         divAnime.style.width="100%";
         lottie.style.display='none';

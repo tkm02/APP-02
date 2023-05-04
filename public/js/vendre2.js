@@ -26,3 +26,9 @@ form2.addEventListener('submit', (e) => {
   })
   window.location.href = '/InscriptionVendeur3';
 });
+
+
+
+
+  
+
