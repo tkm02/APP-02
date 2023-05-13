@@ -21,6 +21,10 @@ form3.addEventListener('submit', (e) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ vendeur: objVendeurConnexion })
+    }).then(reponse=>{
+      if(reponse.ok){
+        window.location.href='/tableauDeBord';
+      }
     })
     
     })

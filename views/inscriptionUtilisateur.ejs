@@ -34,7 +34,7 @@
     </nav>
   </header>
 
-    <form action="/inscription" id="inscription">
+    <form  id="inscription" action="/inscription" method="post">
         <div class="image-homme">
             <img src="/image/fille.png">
         </div>
@@ -62,22 +62,22 @@
                 </div>
                 <div class="check">
                     <div class="ch1">
-                        <input type="checkbox" name="utilisation1" id="check1" required>
+                        <input type="checkbox" name="accepteCondition" id="check1" required>
                     <label for="check1">J'ai lu et j'accepte <a href="">conditionnel générale </a></label>
                     </div>
 
                     <div class="ch2">
-                        <input type="checkbox" name="utilisation2" id="check2" required>
+                        <input type="checkbox" name="accepteNewsletter" id="check2" required>
                         <label for="check2">J'accepte de recevoir la newsletter avec les nouvelles offres</label>
                     </div>
 
                   
                 </div>
-                <input type="button" value="Envoyer" class="btn">
+                <button type="submit" class="btn">Envoyer</button>
         </div>
     </form>
 
-
+    <script src="/js/inscriptionUtilisateur.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,10 @@
 var   code1         = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
 const bcrypt        = require('bcrypt');
 const Vendeur       = require('../models/vendeur');
- const vendreView = (req,res)=>{
+const Produits      = require('../models/produits');
+const fs            = require('fs');
+
+const vendreView = (req,res)=>{
     res.render('vendre');
 }
 const inscriptionViewVendeur = (req,res)=>{
@@ -14,11 +17,95 @@ const inscriptionViewVendeur3 = (req,res)=>{
     res.render('InscriptionVendeur3'); 
     console.log(code1);
 }
+// Vendeur.find().then(vendeur=>console.log(vendeur))
+
+
+const tableauDeBord = (req,res)=>{
+    Vendeur.find()
+        .then(vendeur=>{
+            const {motDePassVendeur,nomEntreprise} = req.body.vendeur;
+            vendeur.forEach(vend => {
+                if(vend.nomEntreprise === nomEntreprise.toLowerCase()){
+                    // console.log(vend);
+                    res.statusCode =200;
+                    res.json({vend}); 
+                    // console.log("Bien");  
+                    return;
+                } 
+            });
+        })
+}
+
+
+const ajouteEnchere = (req,res)=>{
+
+    Vendeur.find()
+        .then(vendeur=>{
+            const {motDePassVendeur,nomEntreprise} = req.body.objVendeurConnexion;
+
+            vendeur.forEach(vend => {
+                if(vend.nomEntreprise === nomEntreprise.toLowerCase()){
+                    const vendeurId =  vend._id;
+                    console.log(req.body.produits.nomProduit);
+                    const {nomProduit,dateDebut,montantInitial,image,description} = req.body.produits ;
+                    const imageData = fs.readFileSync(image);
+                    const imageBinary = imageData.toString('binary');
+                    const produit = new Produits({
+                        nom: nomProduit,
+                        date_debut: dateDebut,
+                        montant_initial: montantInitial,
+                        image,
+                        description,
+                        vendeur: vendeurId,
+                });     
+                   produit.save()
+                    .then(() => res.redirect('/ajouteEnchere'))
+                    .catch(err => console.log(err));
+
+                } 
+            });
+        })
+
+   
+
+   
+  
+
+    
+    
+}
 const tableauDeBordView = (req,res)=>{
     res.render('tableauDeBord'); 
 }
+const listeEnchere = (req,res)=>{
+    const { motDePassVendeur,nomEntreprise } = req.body.vendeur;
+    // console.log(req.body);
+    Vendeur.find({nomEntreprise})
+    .then(vendeurs => {
+        console.log(vendeurs)
+      vendeurs.forEach((vendeur) => {
+        const vendeurId = vendeur._id;
+        Produits.find({ vendeur: vendeurId })
+          .then((produits) => {
+            const produitsVendeur = produits.map((produit) => ({
+              nom: produit.nom,
+              date_debut: produit.date_debut,
+              montant_initial: produit.montant_initial,
+              image: produit.image,
+              meilleure_proposition:produit.meilleure_proposition,
+              vendeur: vendeur.nomEntreprise,
+            }));
+            
+            res.status(200).json({produitsVendeur}) 
+            // console.log(produitsVendeur);
+          })
+          .catch((err) => console.log(err));
+      }); 
+})
+}
 const listeEnchereView = (req,res)=>{
-    res.render('listeEnchere'); 
+    res.render('listeEnchere')
+    
 }
 const ajouteEnchereView = (req,res)=>{
     res.render('ajouteEnchere'); 
@@ -29,14 +116,25 @@ const listeEnchereTerminerView = (req,res)=>{
 const connexionVendeurView = (req,res)=>{
     res.render('connexionVendeur'); 
 }
-
-
+ 
 const connexionVendeur = (req,res)=>{
-    console.log('====================================');
-    console.log(req.body);
-    console.log('====================================');
-    // res.send('bien')
-}
+    const {nomEntreprise,motDePassVendeur} = req.body.vendeur;
+    Vendeur.findOne({ nomEntreprise }) 
+        .then(vendeur=>{
+            const hash = vendeur.motDePassVendeur;
+            bcrypt.compare(motDePassVendeur, hash, (err, result) => {
+                  if (err) {
+                    console.log(err);
+                    return res.status(500).json({ message: 'Une erreur est survenue' });
+                }
+                  if (!result) {
+                    return res.status(401).json({ message: 'Mot de passe incorrect' });
+                }  
+                // res.status(200).send({response:'ok'});
+                res.render('tableauDeBord')
+        })
+} 
+)}
 
 const InscriptionVendeur3 = (req,res)=>{
     const email         = req.body.vendeur.mailVendeur;
@@ -82,6 +180,7 @@ const confirmationInscriptionVendeur = (req,res)=>{
 
 
 
+
 module.exports ={
 
     vendreView,
@@ -91,8 +190,11 @@ module.exports ={
     InscriptionVendeur3,
     confirmationInscriptionVendeur,
     tableauDeBordView,
+    tableauDeBord,
     listeEnchereView,
+    listeEnchere,
     ajouteEnchereView,
+    ajouteEnchere,
     listeEnchereTerminerView,
     connexionVendeurView,
     connexionVendeur,

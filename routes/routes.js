@@ -4,7 +4,10 @@ const {accueilView}  = require('../controllers/accueil');
 
 const {
     connexionViewUtilisateur,
-    inscriptionViewUtilisateur
+    inscriptionViewUtilisateur,
+    inscription,
+    interfaceUtilisateur,
+    connexion
 }  = require('../controllers/utilisateur');
 
 const {
@@ -15,8 +18,11 @@ const {
     InscriptionVendeur3,
     confirmationInscriptionVendeur,
     tableauDeBordView,
+    tableauDeBord,
     listeEnchereView,
+    listeEnchere,
     ajouteEnchereView,
+    ajouteEnchere,
     listeEnchereTerminerView,
     connexionVendeurView,
     connexionVendeur,
@@ -37,12 +43,24 @@ router.get('/listeEnchere',listeEnchereView);
 router.get('/ajouteEnchere',ajouteEnchereView);
 router.get('/listeEnchereTerminer',listeEnchereTerminerView);
 router.get('/connexionVendeur',connexionVendeurView);
+router.get('/interfaceUtilisateur',interfaceUtilisateur);
 
 
 
 router.post('/InscriptionVendeur3',InscriptionVendeur3);
 router.post('/InscriptionVendeur3/confirme',confirmationInscriptionVendeur);
 router.post('/connexionVendeur',connexionVendeur);
+router.post('/tableauDeBord',tableauDeBord);
+router.post('/ajouteEnchere',ajouteEnchere);
+router.post('/listeEnchere',listeEnchere);
+router.post('/inscription',inscription);
+router.post('/connexion',connexion);
+
+
+
+
+
+
 
 
 

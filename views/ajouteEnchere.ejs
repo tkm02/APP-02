@@ -183,12 +183,12 @@
 
       <h1>Ajout d'Enchére</h1>
 
-      <form action="/ajouter_produit" method="POST" enctype="multipart/form-data">
+      <form  enctype="multipart/form-data" id="formProduits">
         <label for="nom">Nom du produit :</label>
         <input type="text" name="nom" id="nom" required><br>
       
-        <label for="date_fin">Date de fin de l'enchère :</label>
-        <input type="datetime-local" name="date_fin" id="date_fin" required><br>
+        <label for="date_debut">Date de debut de l'enchère :</label>
+        <input type="datetime-local" name="date_debut" id="date_debut" required disabled><br>
       
         <label for="montant_initial">Montant initial :</label>
         <input type="number" name="montant_initial" id="montant_initial" required><br>
@@ -202,6 +202,7 @@
         <input type="submit" value="Ajouter le produit">
       </form>
       
+      <script src="/js/ajouteEnchere.js"></script>
       
 </body>
 </html>
