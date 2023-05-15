@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/hearder.css">
     <link rel="stylesheet" href="/css/accueil.css">
-    <link rel="stylesheet" href="/css/vendre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- <link rel="stylesheet" href="/css/vendre.css"> -->
     <link rel="stylesheet" href="/css/interfaceUtilisateur.css">
     <title>E-novateur</title>
 </head>
@@ -19,12 +21,12 @@
             <img src="/image/logo.png" alt="logo">
         </div>
         <div class="barre-Recherche">
-            <!-- <input type="text" placeholder="Rechercher...">
-            <i class="fa-solid fa-magnifying-glass"></i> -->
+            <input type="text" placeholder="Rechercher...">
+            <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="options">
             <div class="items">
-                <a href="/"class="accueil">Mamadou</a>
+                <a href="#" class="accueil" id="user"></a>
             </div>
             <div class="logo-Ordinateur">
                 <i class="fa-solid fa-user"></i>
@@ -32,17 +34,132 @@
         </div>
     </nav>
   </header>
-  <section id="slider">
 
-  </section>
+  <section class="container" id="slider">
+    <span id="message"></span>
+    <img src="/image/image01.jpeg" class="slider active">
+    <img src="/image/image02.jpg"  class="slider ">
+    <img src="/image/image03.png"  class="slider ">
+    <img src="/image/image04.png"  class="slider ">
+    <img src="/image/image05.jpg"  class="slider ">
+</section>
+  <!-- <div class="live"> -->
+<!-- </div> -->
+
   <section id="produits">
-    <div class="produit">
-        <div class="image"></div>
-        <div class="dateFin"></div>
-        <div class="nomProduit">
-            <span class="nom"></span>
-            <button class="participer"></button>
-        </div>
+    <div class="produit" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
+                    <div class="image">
+                        <img src="/image/1200x680_masque_fang_de_la_societe_ngil_hdv_montpellier_26_mars_2022.jpg">
+                    </div>
+            
+                    <div class="dateFin">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Date debut: 16/05/2023 à 14h</span>
+                    </div>
+            
+                    <div class="nomProduit">
+                        <span class="nom">Masque</span>
+                        <a href="/live" class="participer">Lancer l'enchère en live</a>
+
+        
+                    </div>
+                </div>
+  <h1>Les Enchères les plus récentes</h1>
+
+    <h2>Masque:</h2>
+    
+    <div class="categorie">
+        <% produit.forEach(function(prod) { %>
+
+            <% if (prod.categorie === "Masque") { %>
+    
+                <div class="produit" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
+                    <div class="image">
+                        <img src="<%= prod.image %>">
+                    </div>
+            
+                    <div class="dateFin">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Date debut: <%= prod.date_debut.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }) %> à <%= prod.date_debut.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) %></span>
+                    </div>
+            
+                    <div class="nomProduit">
+                        <span class="nom"><%= prod.nom %></span>
+                        <a href="/interfaceUtilisateur/<%= prod.nom %>/participer" class="participer">participer</a>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+
     </div>
+
+    <h2>Montre:</h2>
+    <div class="categorie">
+        <% produit.forEach(function(prod) { %>
+            <% if (prod.categorie === "Montre") { %>
+    
+                <div class="produit" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
+                    <div class="image">
+                        <img src="<%= prod.image %>">
+                    </div>
+            
+                    <div class="dateFin">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Date debut: <%= prod.date_debut.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }) %> à <%= prod.date_debut.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) %></span>
+                    </div>
+            
+                    <div class="nomProduit">
+                        <span class="nom"><%= prod.nom %></span>
+                        <a href="/interfaceUtilisateur/<%= prod.nom %>/participer" class="participer">participer</a>
+                    </div>
+                </div>
+            <% } %> 
+        <% }); %>
+
+    </div>
+
+    <h2>chaussures:</h2>
+    <div class="categorie">
+
+        <% produit.forEach(function(prod) { %>
+            <% if (prod.categorie === "chaussures") { %>
+                <div class="produit" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
+
+                    <div class="image">
+                        <img src="<%= prod.image %>">
+                    </div>
+            
+                    <div class="dateFin">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Date debut: <%= prod.date_debut.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }) %> à <%= prod.date_debut.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) %></span>
+                    </div>
+            
+                    <div class="nomProduit">
+                        <span class="nom"><%= prod.nom %></span>
+                        <a href="/interfaceUtilisateur/<%= prod.nom %>/participer" class="participer">participer</a>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+
+    </div>
+        
+    
   </section>
+
+  <script>
+    AOS.init();
+</script>
+<script src="/js/interface.js"></script>
+<script src="/js/slider.js"></script>
+
+
 </body>

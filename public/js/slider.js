@@ -4,9 +4,13 @@ let message = document.getElementById('message');
 // let precedent = document.querySelector(".precedent");
 
 let etap = 0 ;
-const msg = ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, iure..","Lorem ipsum dolor, sit amet consectetur adipisicing","Lorem ipsum dolor,","Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, iure..","Lorem ipsum dolor, sit amet consectetur ","Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum,"];
+const msg = ["Bienvenue sur notre site ! Découvrez notre gamme de produits de haute qualité.",
+"Explorez un monde de possibilités avec notre entreprise. Trouvez tout ce dont vous avez besoin en un seul endroit.",
+"Simplifiez votre vie avec nos solutions innovantes. Faites confiance à notre expertise pour répondre à vos besoins.",
+"Rejoignez notre communauté et profitez d'offres exclusives. Découvrez une expérience d'achat unique et personnalisée.",
+"Faites un pas vers l'excellence. Découvrez notre entreprise et laissez-nous vous accompagner vers la réussite."];
  message.textContent = msg[0];
-
+ 
 let nbre__slider= slider.length;
 
 function enleverClass(){

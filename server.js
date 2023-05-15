@@ -8,6 +8,6 @@ server.on('listening', () => {
   console.log('Listening on ' + port);
   console.log(`http://localhost:${port}/`);
   console.log('====================================');
-});
+}); 
 
 server.listen(port);

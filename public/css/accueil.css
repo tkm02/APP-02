@@ -10,7 +10,7 @@
 .container img{
     object-fit: cover;
     position: absolute;
-    filter: blur(3px);
+    /* filter: blur(3px); */
     top: 0;
     left: 0;
     width:100%;

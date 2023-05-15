@@ -13,11 +13,11 @@ fetch('/listeEnchere', {
   .then(data => {
     const produits = data.produitsVendeur;
     const tbody = document.querySelector('table tbody');
-    tbody.innerHTML = '';
+    tbody.innerHTML = ''; 
   
     produits.forEach(produit => {
       const { nom, date_debut, montant_initial, meilleure_proposition, image } = produit;
-  
+   
       // Convertir la date de début en millisecondes
       const dateDebutMs = new Date(date_debut).getTime();
       const dateFinMs = dateDebutMs + (2 * 24 * 60 * 60 * 1000); // Durée de l'enchère : 2 jours

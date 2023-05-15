@@ -12,10 +12,11 @@ formProduits.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nomProduit      = document.getElementById('nom').value;
-  const dateDebut          = document.getElementById('date_debut').value;
+  const dateDebut       = document.getElementById('date_debut').value;
   const montantInitial  = document.getElementById('montant_initial').value;
   const image           = document.getElementById('image').value;
   const description     = document.getElementById('description').value;
+  const categorie       = document.getElementById('categorie').value;
 
 
   const objProduits = {
@@ -24,7 +25,8 @@ formProduits.addEventListener('submit', (e) => {
     dateDebut,
     montantInitial,
     image,
-    description
+    description,
+    categorie 
     
   }
   sessionStorage.setItem('objProduits', JSON.stringify(objProduits));
@@ -38,10 +40,10 @@ const objVendeurConnexion        = JSON.parse(sessionStorage.getItem('objVendeur
     },
     body: JSON.stringify({ produits : JSON.parse(sessionStorage.getItem('objProduits')),objVendeurConnexion })
   })
-
+ window.location.reload();
 //   nomProduit,dateDebut,montantInitial,image,description  = '';
 
-});
+}); 
 
 // .then(response => response.json())
 // .then(data => { 

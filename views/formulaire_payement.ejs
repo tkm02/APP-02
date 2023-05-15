@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    
+
+    <div class="container">
+        <form>
+        <label for="montant">Montant envoyé :</label>
+        <input type="text" id="montant" name="montant" required>
+  
+        <label for="vendeur">Numéro du vendeur :</label>
+        <input type="text" id="vendeur" name="vendeur" required>
+  
+        <label for="solde">Solde :</label>
+        <input type="text" id="solde" name="solde" required>
+  
+        <input type="submit" value="Envoyer">
+  
+        <a href="#">Annuler</a>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
+
+<style>
+
+/* Le conteneur principal */
+.container {
+  width: 40%;
+  margin-top: 200px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 3px 3px black;
+  margin-left: 300px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 200px;
+}
+
+/* Les labels */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Les inputs */
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Le bouton */
+form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Le lien */
+a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+.container form input[type="submit"],
+.container form a {
+  background-color: #2196F3;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.container form input[type="submit"]:hover,
+.container form a:hover {
+  background-color: #0D47A1;
+  cursor: pointer;
+}
+
+</style>
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<html>
+    <form  enctype="multipart/form-data" id="formProduits">
+      <label for="nom">Nom du produit :</label>
+      <input type="text" name="nom" id="nom" required><br>
+    
+      <label for="categorie">Catégorie :</label>
+      <select name="categorie" id="categorie">
+        <option value="">-- Sélectionnez une catégorie --</option>
+        <option value="Masque">Masque</option>
+        <option value="chaussures">Chaussures</option>
+        <option value="Montre">Montre</option>
+      </select><br>
+  
+      <label for="date_debut">Date de debut de l'enchère :</label>
+      <input type="datetime-local" name="date_debut" id="date_debut"   required disabled><br>
+  
+      <label for="montant_initial">Montant initial :</label>
+      <input type="number" name="montant_initial" id="montant_initial" required><br>
+  
+      <label for="image">Image :</label>
+      <input type="file" name="image" id="image" accept="image/*" required><br>
+  
+      <label for="description">Description :</label><br>
+      <textarea name="description" id="description" rows="5" cols="30" required></textarea><br>
+      <a href="#">
+        <input type="submit" value="Ajouter le produit">
+      </a>
+    </form>
+
+
+</html>
+
+<style>
+  form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+  }
+  
+  form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #141B5D;
+  }
+  
+  form input,
+  form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #eee;
+    color: #141B5D;
+    outline: 0;
+  }
+  
+  form input[type="submit"] {
+    background-color: #141B5D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  form select{
+    padding: 10px ;
+    width: 100%;
+    margin: 10px 0;
+    background: #eee;
+  }
+  form input[type="submit"]:hover {
+    background-color: transparent;
+    border: 2px solid #141B5D;
+    color: #141B5D;
+  }
+  
+  form img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  form textarea {
+    min-height: 150px;
+  }
+  
+</style>

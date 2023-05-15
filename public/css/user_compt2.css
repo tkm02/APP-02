@@ -1,0 +1,109 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+.couleur{
+    height: 10px;
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 50px;
+}
+h1{
+    text-align: center;
+    font-weight: bolder;
+    font-style: oblique;
+}
+h2{
+    text-align: center;
+
+}
+.position{
+    margin-top: 130px;   
+    border: 1px solid blue;
+    width: 60%;
+    text-align: center;
+    margin-left: 100px;
+}
+.couleur{
+    background-color: blue;
+    width: 80%;
+    margin-left: 30px;
+}
+.sec1{
+    margin-left: 0px;
+    width: 40%;
+    height: 590px;
+    border: 1px solid;
+
+}
+.dispo1{
+    background-color: green;
+    font-weight: bolder;
+    height: 30px;
+    margin-bottom: 1px;
+    
+}
+.ligne{
+    width: 100%;
+    color: black;
+    background-color: rgb(233, 233, 233);
+    height: 70px;
+    font-weight: bolder;
+    font-size: larger;
+}
+.ligne1{
+    width: 100%;
+    color: black;
+    height: 70px;  
+    font-weight: bolder;
+}
+.sec2{
+    margin-left: 42%;
+    margin-top: -49%;
+    border: 1px solid;
+    height: 110vh;
+
+}
+.display div{
+  
+    height: 40px;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+.kudos{
+    width: 200px;
+    height: 60px;
+    border: 1px solid;
+    text-align: center;
+    color: black;
+}
+
+.kudos:hover{
+    background-color: rgb(15, 11, 65);
+    color: white;
+}
+.display{
+    display: flex;
+    flex-direction: row;
+}
+
+.preso{
+    width: 200px;
+    height: 60px;
+    border: 1px solid;
+    color: white;
+    text-align: center;
+    background-color: rgb(15, 11, 65);
+}
+.case{
+    border: 1px transparent black;
+    margin-top: 50px;
+    height: 500px;
+}
+.taille{
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgb(232, 146, 146);
+}

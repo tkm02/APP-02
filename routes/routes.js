@@ -1,13 +1,24 @@
 const express   = require('express');
 const router    = express.Router();
 const {accueilView}  = require('../controllers/accueil');
+const multer = require("multer");
+
 
 const {
     connexionViewUtilisateur,
     inscriptionViewUtilisateur,
     inscription,
     interfaceUtilisateur,
-    connexion
+    connexion,
+    interfaceUtilisateurParticiper,
+    compteUtilisateur,
+    enchere,
+    compteUtilisateur2,
+    modifier,
+    formulaire_payement,
+    interUtilisateur,
+    live,
+    condition
 }  = require('../controllers/utilisateur');
 
 const {
@@ -26,9 +37,13 @@ const {
     listeEnchereTerminerView,
     connexionVendeurView,
     connexionVendeur,
+    enchere_live,
+    
 }  = require('../controllers/vendeur');
 
+ 
 
+router.put('/interfaceUtilisateur/:nom/participer',modifier);
 
 
 router.get('/',accueilView);
@@ -44,6 +59,14 @@ router.get('/ajouteEnchere',ajouteEnchereView);
 router.get('/listeEnchereTerminer',listeEnchereTerminerView);
 router.get('/connexionVendeur',connexionVendeurView);
 router.get('/interfaceUtilisateur',interfaceUtilisateur);
+router.get('/interfaceUtilisateur/:nom/participer',interfaceUtilisateurParticiper);
+router.get('/compteUtilisateur',compteUtilisateur);
+router.get('/compteUtilisateur/enchere',enchere);
+router.get('/compteUtilisateur2',compteUtilisateur2);
+router.get('/enchere_live',enchere_live);
+router.get('/live', live);
+router.get('/formulaire_payement',formulaire_payement);
+router.get('/condition',condition);
 
 
 
@@ -55,6 +78,8 @@ router.post('/ajouteEnchere',ajouteEnchere);
 router.post('/listeEnchere',listeEnchere);
 router.post('/inscription',inscription);
 router.post('/connexion',connexion);
+router.post('/interfaceUtilisateur',interUtilisateur);
+
 
 
 

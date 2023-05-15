@@ -9,8 +9,10 @@ const VendeurSchemaVrai = new mongoose.Schema({
     motDePassVendeur    : {type: String, require:true},
     villeEntreprise     : {type: String, default: "Abidjan"},
     numeroEntreprise    : {type: Number, require:true, unique:true },
-    date                : {type: Date,   default: Date.now}
-});
+    solde               : {type:Number,require:true},
+    date                : {type: Date,   default: Date.now},
+    
+}); 
 
 const Vendeur = mongoose.model("Vendeur",VendeurSchemaVrai);
 module.exports= Vendeur;

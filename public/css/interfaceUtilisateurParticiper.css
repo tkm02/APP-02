@@ -1,0 +1,237 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.info_produit{
+   display: flex;
+   flex-direction: row;
+   /* border-top: 1px black solid; */
+   padding: 50px 5%;
+   background-color: #f1f1f1;
+}
+.info_produit .inf{
+    width: 100%;
+    border: 1px black solid;
+    height: 750px;
+    border-radius: 10px;
+    margin-right: 1%;
+
+}
+.infA{  
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    flex-direction: column;
+    position: relative;
+}
+
+.elmtA{
+    border: 2px solid;
+    width: 100%;
+    height: 75%;
+    border-radius: 5px;
+    /* background-image: url('/image/art-audeas.jpg'); */
+    background-repeat: no-repeat;
+
+}
+.elmtA img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center
+}
+.elmtB{
+    width: 100%;
+    height: 15%;
+    margin-top: 15px;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: row;
+    position: relative;
+
+}
+.elmtB img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center
+}
+.elmtBINF{
+    width: 100%;
+    margin-right: 1%;
+    border: 1px black solid;
+    margin-left: 1%;
+    border-radius: 3px;
+    /* background-image: url('/image/art-audeas.jpg'); */
+    background-repeat: no-repeat;
+}
+
+#infA{
+    border: none;
+}
+
+#infB{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* #infB div{
+    width: 30%;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    height: 8%;
+    border-radius: 10px;
+} */
+.description{
+    background-color: #25C073;
+    width: 60%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    /* border: 1px solid   ; */
+    height: 8%;
+    border-radius: 8px 0 0 0;
+}
+
+div h3{
+    margin: 5px;
+}
+#infB p{
+    margin-top: 25px;
+    text-align: justify;
+}
+
+#infC{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border : none;
+}
+
+.elmtCINF1{
+    height: 48%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.elmtCINF1 .elmtCINF11,.elmtCINF12,.elmtCINF13,.elmtCINF14{
+    height: 18%;
+    border: 1px solid #25C073;
+    /* background: #f1f1f1; */
+    margin-bottom: 7%;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    /* border-radius: 8px 0 0 0; */
+
+}
+.elmtCINF11{
+    background-color: #25C073;
+    width: 60%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 0 0 0;
+    border: 0px;
+    height: 8%; 
+}
+.elmtCINF12{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* background-color: black; */
+    position: relative;
+    
+}
+.montantInitial,.montant{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #25C073; */
+    background-color: transparent;
+
+}
+.montant{
+    background-color: #25C073;
+    color: #fff;
+}
+.elmtCINF2{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 52%;
+    display: flex;
+    flex-direction: column;
+}
+
+.elmtCINF14 .proposition{
+    background-color: #141B5D;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.elmtCINF2{
+    border-radius: 0;
+}
+.elmtCINF2 .elmt{
+    height: 18%;
+    border: 1px solid black;
+    margin-bottom: 1%;
+    background: transparent;
+    border: 1px solid #25C073;
+    color: #25C073;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    transition: background .3s ease-in-out;
+    cursor: pointer;
+
+    /* border-radius: 10px; */
+}
+#decompte{
+    background-color: #25C073;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.3em;
+}
+.elmtCINF111{
+    background-color: #25C073;
+    border-radius: 0;
+    height: 15%;
+    margin: 0px 0 10px 0px;
+    width: 60%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+}
+.elmtCINF2 .elmt:hover{
+    background: #141B5D;
+    color: #fff;
+
+}
+
+
+
+

@@ -1,0 +1,221 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+enchere{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+h1:hover {
+    text-decoration: underline;
+    color: blue;
+    transition: 0.5s ease;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 15px 5% 15px 5%;
+}
+
+#bienvenue {
+    width: 20%;
+    height: 550px;
+    border: 1px solid blue;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+}
+
+#bienvenue h2{
+    font-size: 20px;
+    margin: 30px 10% 0 25px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#bienvenue h2 span{
+    color: blue;
+    margin-left: 10px;
+}
+
+#bienvenue .connect{
+    font-size: 15px;
+    margin: 15px 5% 0 30px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0 5px 0;
+}
+
+#bienvenue .connect div{
+    color: white;
+    background-color: red;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 3px;
+}
+#bienvenue .connect p{
+    margin-top: 2px;
+}
+
+#bienvenue .connect a{
+    text-decoration: none;
+}
+
+#bienvenue #blueband{
+    height: 10px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#bienvenue .Moi{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    height: 200px;
+    margin-top: 30px;
+    background-color: rgb(222, 208, 208);
+    position: relative;
+    border-radius: 5px;
+}
+
+#bienvenue .Moi div{
+    height: 33.33%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 20px 0 20px 25px;
+}
+
+#bienvenue .Moi div img{
+    margin-right: 5px;
+}
+
+#bienvenue .Moi div a{
+    text-decoration: none;
+    color: blue;
+}
+
+#bienvenue .Moi div a:hover{
+    text-decoration: underline;
+    transition: 0.3 ease;
+    transform: scale(1.05);
+}
+
+#bienvenue #VosEncheres{
+    width: 80%;
+    margin-left: 10%;
+    height: 70px;
+    background-color: rgb(144, 241, 144);
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 25px 0 25px 0;
+}
+
+#bienvenue #VosEncheres p{
+    font-size: 15px;
+    text-align: center;
+}
+
+#bienvenue #VosEncheres p:hover {
+    text-decoration: underline;
+    transition: 0.3 ease;
+    transform: scale(1.05);
+}
+
+#listeEnchere{
+    width: 70%;
+    height: 850px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#container1{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    position: relative;
+    padding-top: 15px;
+}
+
+#container11, #container13{
+    background-color: blue;
+    width: 2.5%;
+    height: 120px;
+}
+
+#container12{
+    width: 95%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container12 h2{
+    font-size: 25px;
+    text-align: center;
+}
+
+#container121{
+    border: solid 1px black;
+    margin-top: 5px;
+    height: 70px;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+#container121 div{
+    border: solid 1px black;
+    margin-left: 5px;
+    width: 25%;
+}
+
+#container121 div:active{
+    background-color: blue;
+    color: white;
+}
+
+#container121 div p{
+    text-align: center;
+    font-size: 15px;
+    padding: 25px 0 25px 0;
+}
+
+#container21 {
+    border: 1px solid black;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 5%;
+    padding: 2% 5% 2% 5%;
+}
+
+#container21 div{
+    box-shadow: 1px 1px 0 black;
+    border: 0.5px solid black;
+    height: 16%;
+    margin-bottom: 1%;
+}

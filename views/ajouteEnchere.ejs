@@ -17,7 +17,9 @@
             <div class="dot d3"></div>
           </div>
            <div class="nav-bloc nv-1">
-            <img src="/image/logo.png">
+            <a href="/tableauDeBord" alt="Vers une autre page">
+              <img src="/image/logo.png">
+              </a>
         </div>
           <div class="nav-bloc n-1">
             <svg
@@ -130,7 +132,7 @@
                   <a >Link</a>
                 </li>
                 <li>
-                  <a >Link</a>
+                  <a>Link</a>
                 </li>
                 <li>
                   <a >Link</a>
@@ -183,24 +185,32 @@
 
       <h1>Ajout d'Enchére</h1>
 
-      <form  enctype="multipart/form-data" id="formProduits">
-        <label for="nom">Nom du produit :</label>
-        <input type="text" name="nom" id="nom" required><br>
-      
-        <label for="date_debut">Date de debut de l'enchère :</label>
-        <input type="datetime-local" name="date_debut" id="date_debut" required disabled><br>
-      
-        <label for="montant_initial">Montant initial :</label>
-        <input type="number" name="montant_initial" id="montant_initial" required><br>
-      
-        <label for="image">Image :</label>
-        <input type="file" name="image" id="image" required><br>
-      
-        <label for="description">Description :</label><br>
-        <textarea name="description" id="description" rows="5" cols="30" required></textarea><br>
-      
-        <input type="submit" value="Ajouter le produit">
-      </form>
+        <form  enctype="multipart/form-data" id="formProduits">
+          <label for="nom">Nom du produit :</label>
+          <input type="text" name="nom" id="nom" required><br>
+          
+          <label for="categorie">Catégorie :</label>
+          <select name="categorie" id="categorie">
+            <option value="">-- Sélectionnez une catégorie --</option>
+            <option value="Masque">Masque</option>
+            <option value="chaussures">Chaussures</option>
+            <option value="Montre">Montre</option>
+          </select><br>
+        
+          <label for="date_debut">Date de debut de l'enchère :</label>
+          <input type="datetime-local" name="date_debut" id="date_debut"   required disabled><br>
+        
+          <label for="montant_initial">Montant initial :</label>
+          <input type="number" name="montant_initial" id="montant_initial" required><br>
+        
+          <label for="image">Image :</label>
+          <input type="file" name="image" id="image" accept="image/*" required><br>
+        
+          <label for="description">Description :</label><br>
+          <textarea name="description" id="description" rows="5" cols="30" required></textarea><br>
+        
+          <input type="submit" value="Ajouter le produit">
+        </form>
       
       <script src="/js/ajouteEnchere.js"></script>
       

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contrôles caméra, microphone et chat</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    #videoElement {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: #000;
+    }
+
+    .controls {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .controls button {
+      padding: 10px;
+      margin-right: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #0056b3;
+    }
+
+    #chatContainer {
+      width: 400px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+      background-color: #fff;
+    }
+
+    #chatContainer p {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    #messageInput {
+      width: 300px;
+      padding: 5px;
+    }
+
+    #sendButton {
+      padding: 5px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #sendButton:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay="true" id="videoElement"></video>
+
+  <div class="controls">
+    <button id="cameraButton">Couper la caméra</button>
+    <button id="microphoneButton">Couper le microphone</button>
+  </div>
+
+  <div id="chatContainer">
+    <p>Bienvenue dans le chat !</p>
+  </div>
+
+  <div>
+    <input type="text" id="messageInput" placeholder="Votre message">
+    <button id="sendButton">Envoyer</button>
+  </div>
+
+<style>
+body{
+    background-color: #050202;
+}
+/* Styles pour l'emplacement de la vidéo */
+#videoElement {
+  width: 50%; /* Ajustez la largeur selon vos besoins */
+  height: 350px;
+  text-decoration: none; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Styles pour les boutons de contrôle */
+.controls {
+  margin-bottom: 20px; /* Espacement en bas */
+  box-shadow: 10px;
+}
+
+.controls button {
+  margin-right: 15px; /* Espacement horizontal entre les boutons */
+  padding: 10px 20px; /* Espacement interne */
+}
+
+/* Styles pour le conteneur de chat */
+#chatContainer {
+  background-color: black; /* Couleur de fond */
+  padding: 10px; /* Espacement interne */
+  margin-bottom: 10px; /* Espacement en bas */
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  border-radius: 7px;
+  font-weight: bolder;
+  border: 2px solid green;
+  font-size: 13px;
+
+}
+#cameraButton,#sendButton,#microphoneButton{
+    background-color:green;
+    border-radius: 8px;
+    color: #000;
+}
+#microphoneButton:hover{
+    background-color:rgb(14, 5, 113);
+    border-radius: 12px;
+    color: #fcfcfc;
+}
+#sendButton:hover{
+    background-color:rgb(14, 5, 113);
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+#cameraButton:hover{
+    background-color:rgb(14, 5, 113);
+    border-radius: 12px;
+    color: #ffffff;
+}
+/* Styles pour les champs d'écriture et le bouton d'envoi */
+input[type="text"],
+#sendButton {
+  margin-right: 10px; /* Espacement horizontal entre les éléments */
+  padding: 10px; /* Espacement interne */
+  font-weight: bolder;
+  font-size: 12px;
+  border-radius: 2px;
+  font-style: italic;
+}
+
+#sendButton {
+  padding: 10px 20px; /* Espacement interne */
+}
+</style>
+  <script>
+    var video = document.getElementById("videoElement");
+    var cameraButton = document.getElementById("cameraButton");
+    var microphoneButton = document.getElementById("microphoneButton");
+    var chatContainer = document.getElementById("chatContainer");
+    var messageInput = document.getElementById("messageInput");
+    var sendButton = document.getElementById("sendButton");
+    var stream;
+
+    // Fonction pour couper/activer la caméra
+    function toggleCamera() {
+      var videoTracks = stream.getVideoTracks();
+      videoTracks.forEach(function(track) {
+        track.enabled = !track.enabled;
+      });
+
+      if (videoTracks[0].enabled) {
+        cameraButton.textContent = "Couper la caméra";
+      } else {
+        cameraButton.textContent = "Activer la caméra";
+      }
+    }
+
+    // Fonction pour couper/activer le microphone
+    function toggleMicrophone() {
+      var audioTracks = stream.getAudioTracks();
+      audioTracks.forEach(function(track) {
+        track.enabled = !track.enabled;
+      });
+
+      if (audioTracks  [0].enabled) {
+    microphoneButton.textContent = "Couper le microphone";
+  } else {
+    microphoneButton.textContent = "Activer le microphone";
+  }
+}
+
+// Fonction pour envoyer un message dans le chat
+function sendMessage() {
+  var message = messageInput.value.trim();
+
+  if (message !== "") {
+    var messageElement = document.createElement("p");
+    messageElement.textContent = "Moi : " + message;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    messageInput.value = "";
+  }
+}
+
+// Gérer les clics sur les boutons
+cameraButton.addEventListener("click", toggleCamera);
+microphoneButton.addEventListener("click", toggleMicrophone);
+sendButton.addEventListener("click", sendMessage);
+
+// Obtenir l'accès à la caméra et au microphone
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(function(stream) {
+    video.srcObject = stream;
+    window.stream = stream;
+  })
+  .catch(function(error) {
+    console.log("Une erreur s'est produite : ", error);
+  });
+</script>
+</body>
+</html>
